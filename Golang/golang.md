@@ -1056,7 +1056,7 @@ func main() {
         fmt.Printf("Index: %d, Character: %c\n", index, char)
     }
 }
-~~~
+```
 
 # Arrays, Slices, and Maps in Go
 
