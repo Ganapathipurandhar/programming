@@ -1063,6 +1063,28 @@ func main() {
 ## Arrays
 An array in Go is a fixed-size collection of elements of the same type. with sequenal memory address
 
+### syntax:
+var <array name> <data type> [<size of the array>]
+var grades [5] int
+var fruits [3] s
+
+var grades [3]int = [3]int{10, 20, 30}
+grades := [3]int{10, 20, 30}
+grades := […]int{10, 20, 3}    //[...] implesity initial the value (no need to initialize the values)
+
+looping through an array
+~~~
+for index, element := range grades {
+fmt.Println(index, "=>", element)
+}
+~~~
+or 
+~~~
+for i := 0; i < len(grades); i++ {
+fmt.Println(grades[i])
+}
+~~~
+
 ### Declaring and Initializing an Array
 ```go
 package main
@@ -1092,6 +1114,16 @@ fmt.Println(arr) // Outputs: [0 0 42 0 0]
 
 ## Slices
 A slice is a dynamically-sized, more powerful abstraction of an array.
+
+### points
+• continuous segment of an underlying array.
+• variable typed ( elements can be added or removed)
+• more flexible
+
+### declaring and initializing a slice
+<slice_name> := []<data_type>{<values>}
+grades := []int{10, 20,30}
+
 
 ### Declaring and Initializing Slices
 ```go
@@ -1132,11 +1164,29 @@ for index, value := range slice {
     fmt.Printf("Index: %d, Value: %d\n", index, value)
 }
 ```
-
+### Slice Capacity in Go - Key Points
+- Length (len(slice)) → Number of elements currently in the slice.
+- Capacity (cap(slice)) → Maximum elements the slice can hold before growing.
+### Formula:
+- len(slice) = end - start
+- cap(slice) = total array size - start index
+### Appending Beyond Capacity:
+If elements exceed capacity, Go creates a new larger array and copies elements.
+Creating a Slice with Custom Capacity:
+- Use make([]T, length, capacity)
+Example: slice := make([]int, 3, 6) → Length: 3, Capacity: 6
+Capacity Growth:
+Go doubles the capacity when exceeded (growth strategy may vary).
 ---
 
 ## Maps
 A map is a key-value data structure.
+
+### points:
+• unordered collection of key/value pairs.
+• implemented by hash tables.
+• provide efficient add, get and delete
+operati
 
 ### Declaring and Initializing Maps
 ```go
