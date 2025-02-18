@@ -74,10 +74,10 @@ Databases are common in all application development
 Being a DevOps engineer you don't need be a DB expert but have a clear information on what kind of DB are
 used in which uses cases and pick one for your profile and experience.
 
-Column DB   ---> casendra it is column based databases (it is super effective to store different kinds of data and very fast retival capaticity it--> semaless db )
-Relation DB ---> MySQL
-Key-Value DB ---> redis like k8s etcd
- NoSQL or Document db ---> mongoDB , dynamo db
+- Column DB   ---> casendra it is column based databases (it is super effective to store different kinds of data and very fast retival capaticity it--> semaless db )
+- Relation DB ---> MySQL
+- Key-Value DB ---> redis like k8s etcd
+- NoSQL or Document db ---> mongoDB , dynamo db
 
  **best choose to go with MYSQL[releation db], in organization we had used rds,mariadb etc(they as expetting more information on this)
 
