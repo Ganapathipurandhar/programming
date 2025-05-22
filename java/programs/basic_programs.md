@@ -447,3 +447,84 @@ public class MonthDays {
     }
 }
 ~~~
+
+
+# Write a java program to print the entered charatered is ovels and consonent 
+~~~
+package purandhar_proj;
+
+import java.util.Scanner;
+
+public class OvelConcasonent {
+
+	public static void main(String[] args) {
+        System.out.println("Enter a letter to find if it's a vowel or consonant:");
+        Scanner s = new Scanner(System.in);
+        char a = s.next().charAt(0);
+        s.close();  // Closing the Scanner to prevent resource leaks
+        
+        // Check if the input is a valid alphabet letter
+        if ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z')) {
+            if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u' ||
+                a == 'A' || a == 'E' || a == 'I' || a == 'O' || a == 'U') {
+                System.out.println(a + " is a vowel");
+            } else {
+                System.out.println(a + " is a consonant");
+            }
+        } else {
+            System.out.println("Invalid input! Please enter an alphabet letter.");
+        }
+    }
+}
+
+~~~
+
+# write the program to print the number of vowels and consonant in the sentances
+~~~
+import java.util.Scanner;
+
+public class VowelConsonantCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input
+        System.out.println("Enter a sentence:");
+        String sentence = scanner.nextLine().toLowerCase();  // Convert to lowercase for uniformity
+        scanner.close();
+
+        int vowels = 0, consonants = 0;
+
+        // Define vowel characters
+        String vowelChars = "aeiou";
+
+        // Loop through each character in the sentence
+        for (char c : sentence.toCharArray()) {
+            if (Character.isLetter(c)) {  // Check if character is a letter
+                if (vowelChars.indexOf(c) != -1) {
+                    vowels++;  // Increment vowel count
+                } else {
+                    consonants++;  // Increment consonant count
+                }
+            }
+        }
+
+        // Output result
+        System.out.println("Number of vowels: " + vowels);
+        System.out.println("Number of consonants: " + consonants);
+    }
+}
+~~~
+
+##  Enhanced For Loop
+~~~
+for (char c : sentence.toCharArray()) {
+    // Process each character
+}
+~~~
+## Regular for Loop
+~~~
+char[] chars = sentence.toCharArray();
+for (int i = 0; i < chars.length; i++) {
+    char c = chars[i]; // Manually accessing each character
+}
+~~~
