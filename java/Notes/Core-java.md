@@ -402,6 +402,47 @@ class Student {
 varibles
 
 
+## Shadowing of Variables
+
+**Variable shadowing** occurs when a variable declared within a certain scope (e.g., a method or block) has the same name as a variable declared in an outer scope (e.g., a class field). The inner variable "shadows" or hides the outer variable within its scope.
+
+### Example
+
+```java
+class Example {
+    int x = 10; // instance variable
+
+    void show() {
+        int x = 20; // local variable shadows instance variable
+        System.out.println(x); // prints 20
+    }
+}
+```
+
+- In the above example, the local variable `x` inside the `show()` method shadows the instance variable `x`. When `System.out.println(x)` is called, it prints the local variable's value (`20`), not the instance variable's value (`10`).
+
+### Accessing Shadowed Variables
+
+You can access the shadowed instance variable using `this` keyword:
+
+```java
+class Example {
+    int x = 10;
+
+    void show() {
+        int x = 20;
+        System.out.println(x);      // prints 20 (local variable)
+        System.out.println(this.x); // prints 10 (instance variable)
+    }
+}
+```
+
+### Key Points
+
+- Shadowing can make code harder to read and maintain.
+- Prefer using different names for variables in different scopes to avoid confusion.
+- Use `this` to refer to the current object's instance variable if shadowed by a local variable.
+
 ## Java Identifier Rules
 
 An **identifier** is the name given to elements such as classes, methods, variables, and interfaces in Java. Identifiers help uniquely identify these elements in your code.
